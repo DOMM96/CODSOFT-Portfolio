@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+		<title>
+		
+		</title>
+		
+		<!--I imported a font called Orbitron-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+		
+		
+		<style>			
+			/* I then apply CSS to align, position and colour elements of the calculator*/
+			body{
+                display: flex;
+				justify-content: center;
+				align-items: center;
+                background-color: #b3b1b1;
+
+            }
+            .calculator{
+                margin: 20px;
+                background-color: #e8ecf2;
+                display: flexbox;
+                flex-direction: column;
+				border-radius:30px;
+				padding:15px;
+				box-shadow: -5px -5px 10px rgba(176, 176, 176, 0.8), 5px 5px 10px rgba(0, 0, 0, 0.333);
+                border: 4px solid #e8ecf2;
+
+				display: grid;
+				grid-template-rows: auto repeat(4, 1fr);
+				grid-template-columns: repeat(4, 1fr);
+				gap: 10px;
+                
+			}
+			.button, .operator{
+                margin: 10px;
+				font-size: 25px;
+                font-weight: 500;
+                color: #73787d;
+                width: 100px;
+                height: 100px;
+                border-radius:100px;
+                background-color:#e8ecf2;
+                box-shadow: -5px -5px 10px rgb(255, 255, 255,0.8), 5px 5px 10px rgb(0,0,0,0.25);
+				font-family:Orbitron,sans-serif;
+                border: 4px solid #e8ecf2;			
+			}
+            .button:hover, .operator:hover{
+                box-shadow: -1px -1px 5px rgb(255, 255, 255,0.6), 1px 1px 5px rgb(0,0,0,0.3),
+                inset -2px -2px 5px rgba(255, 255, 255, 1),
+                inset 2px 2px 4px rgba(0,0,0,0.3);
+                color:#ff0000
+            }
+			
+			.screen{
+				grid-column: span 3;
+				width:90%;
+				height:50px;
+				text-align:right;
+                padding-right: 10px;
+				border-radius:100px;
+                border: none;
+                font-size: 25px;
+                background-color:#d5d8de;
+                box-shadow: -1px -1px 5px rgb(255, 255, 255,0.6), 1px 1px 5px rgb(0,0,0,0.3),
+                inset -2px -2px 5px rgba(255, 255, 255, 1),
+                inset 2px 2px 4px rgba(0,0,0,0.3);
+                border: 4px solid #e8ecf2;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			//I then use javascript to implement the formulas and display values
+			//also adding a sound effect
+			function display(val){
+				document.getElementById("result").value+=val;
+				return val;
+			}
+			function solve(){
+				var x=document.getElementById("result").value;
+				var y=eval(x);
+				document.getElementById("result").value=y;
+				return y;
+			}
+			function clearScreen(){
+				document.getElementById("result").value="";
+			}	
+
+			const audio=new Audio();
+			audio.src="click.mp3"
+		</script>
+			
+	</head>	
+	<body>
+		<!--in my HTML i created the various buttons and operators, "onclick" calls specific functions-->
+		<div class="calculator">
+			<!-- creating the screen/ and buttons -->
+			<input type="text" id="result" class="screen"></input>
+			<button type="button" class="operator" onclick="clearScreen(); audio.play()" style="background-color:#e8ecf2">C</button></td>
+			
+		
+			<button type="button" class="button" onclick="display('1'); audio.play()">1</button>
+			<button type="button" class="button" onclick="display('2'); audio.play()">2</button>
+			<button type="button" class="button" onclick="display('3'); audio.play()">3</button>
+			<button type="button" class="operator" onclick="display('/'); audio.play()">/</button>
+		
+		
+			<button type="button" class="button" onclick="display('4'); audio.play()">4</button>
+			<button type="button" class="button" onclick="display('5'); audio.play()">5</button>
+			<button type="button" class="button" onclick="display('6'); audio.play()">6</button>
+			<button type="button" class="operator" onclick="display('-'); audio.play()">-</button>
+			
+		
+			<button type="button" class="button" onclick="display('7'); audio.play()">7</button>
+			<button type="button" class="button" onclick="display('8'); audio.play()">8</button>
+			<button type="button" class="button" onclick="display('9'); audio.play()">9</button>
+			<button type="button" class="operator" onclick="display('+'); audio.play()">+</button>
+
+			<button type="button" class="button" onclick="display('.'); audio.play()">.</button>
+			<button type="button" class="button" onclick="display('0'); audio.play()">0</button>
+			<button type="button" class="button" onclick="solve(); audio.play()">=</button>
+			<button type="button" class="operator" onclick="display('*'); audio.play()">*</button>			
+		</div>	
+	</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Norican&family=Playwrite+HR+Lijeva:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sacramento&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Norican&family=Playwrite+HR+Lijeva:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sacramento&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.6;
+            background-color: #c4c4c4;
+            color: #333;
+            
+        }
+
+        .container {
+            width: 100%;
+            margin: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            
+           
+        }
+        header .container{
+            background-color:#333;
+        }
+
+        header {
+            background:#333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header nav ul {
+            list-style: none;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 30px;
+            margin-bottom: 150px;  
+            display: flex;
+            justify-content: center;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;     
+        }
+
+        .portfolio-item {
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            margin: 20px;            
+        }
+
+        .portfolio-item img {
+            width: 300px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @media (max-width: 768px) {
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        .lang-grid{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            margin: 10px;
+            border-radius: 20px; 
+        }
+
+        .lang-item{
+            width: 50px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .cvpic{
+            width: 60%;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        .skills{
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 12px;
+            width: 400px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            padding: 20px ; 
+        }
+        
+        .skillsMain{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px; 
+        }
+
+        .headerText{
+            font-family:"Norican", cursive;
+        }
+
+        .resumeItem{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .langHeading{
+            flex-basis: 100%;
+        }
+
+        .appImg{
+            width: 100%;
+        }
+       
+        .domPic{
+            width: 200px;
+            height: 200px;
+            border-radius:60%;
+            margin: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .download{
+            border-radius: 20px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #202020;
+            color: white;
+        }
+        #contact .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+        .contactContainer{
+            display: flex;
+            gap:20px
+        }
+        .contactContainer a{
+            text-decoration: none;
+            color:rgb(0, 0, 0)
+        }
+        
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        
+        <img src="domPic.png" class="domPic">
+        <div class="container">
+            <h1 class="headerText">Hello I'm Dominique</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="contactContainer">
+            <a href="https://wa.me/0813802066">WhatsApp</a><br>
+            <a href="mailto:example@example.com">Email</a><br>
+            <a href="www.linkedin.com/in/dominique-minnaar-83145b303">LinkedIn</a><br>
+            <a href="https://github.com/DOMM96">Github</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+            <h2>About Me</h2>
+                <p> 
+                    I am a motivated and dedicated individual with a passion for web development
+                    and a commitment to achieving exceptional results. With a strong foundation
+                    in both front-end and back-end technologies, I possess excellent problemsolving 
+                    skills and a positive, collaborative attitude. My ability to multitask
+                    enables me to manage various projects effectively while maintaining a
+                    professional and approachable demeanor in all business interactions.
+                    I thrive on continuous learning and personal growth, actively seeking
+                    opportunities to expand my skill set. My goal is to remain adaptable and future-ready
+                    in the ever-evolving tech landscape. I am enthusiastic about contributing to
+                    innovative projects and am eager to leverage my skills in a dynamic
+                    environment.
+                </p>
+                <img src="apptest.png" class="appImg">
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>My Skills</h2>
+                <p> 
+                    As a motivated and dedicated student studying for a 
+                    diploma in Information Technology from Richfield Institute of Technology, 
+                    I possess a robust skill set that includes effective communication and critical thinking, 
+                    enabling me to analyze complex problems and articulate solutions clearly. 
+                    I excel in time management and have excellent multitasking skills, 
+                    allowing me to handle various projects efficiently while maintaining 
+                    a detail-oriented approach. My computer and information literacy encompasses 
+                    both front-end and back-end technologies. I am continually seeking opportunities for 
+                    personal growth and skill enhancement, aiming to contribute effectively to innovative projects 
+                    in the dynamic tech landscap.
+                </p>   
+                <div class="skillsMain">
+                    <div class="lang-grid">
+                        <h3 class="langHeading">Programming Languages</h3>
+                        <div class="lang-item">   
+                            <img src="html.svg"><br>
+                            <span>HTML</span>
+                        </div>
+                        <div class="lang-item">
+                            <img src="php.svg"><br>
+                            <span>PHP</span>
+                        </div>
+                        <div class="lang-item">
+                            <img src="sqlite.svg"><br>
+                            <span>SQLite</span>
+                        </div>
+                        <div class="lang-item">
+                            <img src="css.svg"><br>
+                            <span>CSS</span>
+                        </div>
+                        <div class="lang-item">
+                            <img src="python.svg"><br>
+                            <span>Python</span>
+                        </div>
+                        <div class="lang-item">
+                            <img src="cpp.svg"><br>
+                            <span>C++</span>
+                        </div>
+                        <div class="lang-item">
+                            <img src="js.svg"><br>
+                            <span>JavaScript</span>      
+                        </div>
+                    </div>
+                    <table class="skills">
+                        <tr>
+                            <td><b>Soft Skills</b></td><td><b>Hard Skills</b></td>
+                        </tr>
+                        <tr>
+                            <td><li>Adaptability</li></td><td><li>Bilingual</li></td>
+                        </tr>
+                        <tr>
+                            <td><li>Colaboration</li></td><td><li>Computer Literate</li></td>
+                        </tr>
+                        <tr>
+                            <td><li>Communication</li></td><td><li>Programming</li></td>
+                        </tr>
+                        <tr>
+                            <td><li>Creativity</li></td><td><li>Design</li></td>
+                        </tr>
+                        <tr>
+                            <td><li>Organization</li></td><td><li>Administrative</li></td>
+                        </tr>
+                        <tr>
+                            <td><li>Responsibility</li></td><td><li>Data Analysis</li></td>
+                        </tr>
+                        <tr>
+                            <td><li>Work Ethic</li></td><td><li>Time management</li></td>
+                        </tr>
+                    </table>  
+                </div>    
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container">
+            <h2>My Projects</h2> 
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <a href="portfolio.html">
+                            <img src="portfolioPic.png" class="Project">
+                            <h3>Portfolio</h3>
+                            <p>(This page) my portfolio, using HTML and CSS</p>
+                            </div>
+                        </a>
+                        <a href="Landing.html">
+                            <div class="portfolio-item">
+                            <img src="landingPic.png" class="Project">
+                            <h3>Landing Page</h3>
+                            <p>This is a landing page for my portfolio</p>
+                            </div>
+                        </a>
+                        <a href="calculator.html">
+                            <div class="portfolio-item">
+                            <img src="calculatorPic.png" class="Project">
+                            <h3>Calculator</h3>
+                            <p>a Calculator made with JavaScript</p>
+                            </div>
+                        </a>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="resume">
+            <div class="container"> 
+                <h2>My Resume</h2>
+                <div class="resumeItem">
+                    <a href="CV_Dominique_Minnaar.pdf" download>
+                        <button class="download">Download My Resume</button>
+                    </a> 
+                    <img src="CV_pic.png" class="cvpic">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <a href="https://wa.me/1234567890">WhatsApp</a><br>
+                <a href="mailto:example@example.com">Email</a><br>
+                <a href="www.linkedin.com/in/dominique-minnaar-83145b303">LinkedIn</a><br>
+                <a href="https://github.com/DOMM96">Github</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+            <p>© 2024 Dominique. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

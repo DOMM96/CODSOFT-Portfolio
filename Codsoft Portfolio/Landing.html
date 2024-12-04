@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sacramento&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            height: 100vh;
+            display: flex;
+        }
+
+        .landing {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        
+
+        .left {
+            flex: 1;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        
+        }
+
+        .left h1 {
+            font-size: 6rem;
+            margin-bottom: 10px;
+            font-family: "Sacramento", cursive;
+            margin-bottom: -40px;
+            
+        }
+
+        .left p {
+            font-size: 2rem;
+            font-family:"Roboto", sans-serif;
+            margin-left: -90px;
+            padding: 20px;
+            
+            
+        
+        }
+
+        .right {
+            flex: 1;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        .contactContainer {
+            position: absolute; /* Absolute positioning */
+            top: 20px; /* Position at the top */
+            right: 20px; /* Position to the right */
+            display: flex;
+            flex-direction: row;
+            align-items:flex-end; /* Align links to the right */
+            gap: 10px; /* Space between links */
+        }
+
+        .contactContainer a {
+            margin-bottom: 8px; /* Space between links */
+            text-decoration: none; /* Remove underline */
+            color: #333; /* Custom color for the links */
+        }
+        .contentContainer{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right h2 {
+            margin-bottom: 10px;
+        }
+
+        .right p {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .button {
+            padding: 15px 30px;
+            background-color:#333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover{
+            background-color: #45a049;
+        }
+        @media (max-width: 768px) {
+            .landing {
+                flex-direction: column; /* Stack elements on top of each other */
+            }
+            .left, .right {
+                flex: none; /* Let each section take its own space */
+                width: 100%; /* Make it full width */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="landing">
+
+        <div class="left" id="left">
+            <h1 id="time"></h1>
+            <p>I'm Dominique</p>
+        </div>
+
+        <div class="right">
+            <div class="contactContainer">
+                <a href="https://wa.me/0813802066">WhatsApp</a><br>
+                <a href="mailto:example@example.com">Email</a><br>
+                <a href="www.linkedin.com/in/dominique-minnaar-83145b303">LinkedIn</a><br>
+                <a href="https://github.com/DOMM96">Github</a>
+            </div>
+            <div class="contentContainer">
+                <h2>Welcome</h2>
+                <a href="again.html" class="button">View Portfolio</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script type="text/javascript">
+    window.onload = function() {
+        const greetingElement = document.getElementById('time');
+        const color=document.getElementById("left");
+        const currentTime = new Date();
+        const hours = currentTime.getHours(); // Get the current hour (0-23)
+        let time;
+
+        if (hours < 12) {
+            time = "Good Morning,";
+            color.style.backgroundImage="css.svg";
+        } else if (hours < 18) {
+            time = "Good Afternoon,";
+            color.style.backgroundImage="CV_pic.png";
+        } else {
+            time = "Good Evening,";
+            //color.style.color="blue"//"linear-gradient(white, yellow, orange)";
+        }
+
+        greetingElement.textContent = time; // Set the greeting message
+    };
+</script>
+</html>
